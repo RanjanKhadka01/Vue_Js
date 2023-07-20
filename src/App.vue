@@ -1,19 +1,9 @@
 
 <template>
-<h2 v-for="(name, index) in names" :key="name">{{index}} {{name}}</h2>
+  <template v-for="name in names" :key="name">
+  <h2 v-if="name == 'vanja'">  {{name}} </h2>
+  </template>
 
-<h2 v-for="name in fullNames" :key="fullname">{{name.first}} {{name.last}}</h2>
-
-<div v-for="actor in actors" :key="actor.movies">
-  <h2>{{actor.name}}</h2>
-  <h3 v-for="movie in actor.movies">{{movie}}</h3>
-</div>
-
-<template v-for="(info,key, index) in myinfo" :key="info">
-  <h3>
-   {{ index }} {{ key }} {{ info }}
-  </h3>
-</template>
 </template>
 
 
@@ -24,30 +14,7 @@ export default {
   name: 'App',
   data() {
     return {
-      names: ['Dadey', 'Vanja', 'Gothey'],
-
-      fullNames: [
-        {first: 'Vanja', last: 'Puir'},
-        {first: 'Dadey', last: 'Mujurmuti'},
-        {first: 'Dhimal', last: 'Bbek'},
-      ],
-
-      actors: [
-        {
-          name: 'Christian Bale',
-          movies: ['Batman', 'The Prestiage'],
-        },
-        {
-          name: 'Di Caprio',
-          movies: ['Titanic', 'Inception'],
-        },
-      ],
-
-      myinfo: {
-        name: 'Murra',
-        desination: 'QA',
-        company: 'AG',
-      }
+      names: ['vanja', 'murra', 'umaga', 'mujurmati'],
       }
     },
   }
