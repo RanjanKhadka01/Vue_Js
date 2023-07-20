@@ -10,6 +10,9 @@
   <h2>World</h2>
 </template>
 
+<h2 v-show="element">V Show</h2>  <!--It is always present in DOM despite negative expression. It only change CSS properties to display:none-->
+<h2 v-if="element">V IF</h2> <!--It remove element from the DOM if the expression evaluate to false-->
+
 </template>
 
 
@@ -22,7 +25,9 @@ export default {
     return {
       num : 10,
 
-      display: true
+      display: true,
+
+      element: true
       }
     },
   }
