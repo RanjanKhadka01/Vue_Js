@@ -1,22 +1,38 @@
 
 <template>
-  <template v-for="name in names" :key="name">
-  <h2 v-if="name == 'vanja'">  {{name}} </h2>
-  </template>
+<h2>{{name}}</h2>
+<button v-on:click="name = 'murra'">Change Name</button>
 
+<h2>{{count}}</h2>
+<div>
+  <button v-on:click="increment(1)">Increment 1</button>
+  <button v-on:click="increment(5)">Increment 5</button>
+  <button v-on:click="decrement(1)">Decrement 1</button>
+  <button v-on:click="decrement(5)">Decrement 5</button>
+</div>
 </template>
 
 
 <script>
 
 
+
 export default {
   name: 'App',
   data() {
     return {
-      names: ['vanja', 'murra', 'umaga', 'mujurmati'],
+      name: 'dadey',
+      count: 0,
       }
     },
+    methods: {
+      increment(num){
+        this.count += num
+      },
+      decrement(num){
+        this.count -= num
+      }
+    }
   }
 
 </script>
