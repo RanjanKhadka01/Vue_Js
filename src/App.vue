@@ -6,10 +6,10 @@
     </pre>
   </div>
 
-<form @submit="submitForm">
+<form @submit.prevent="submitForm">
   <div>
     <label for="name">Name</label>
-    <input type="text" id="name" v-model="fromValue.name">
+    <input type="text" id="name" v-model.trim.lazy="fromValue.name"> <!--Lazy modifiers only changes when any events occurs-->
   </div>
 <br>
   <div>
@@ -73,9 +73,12 @@
   <input type="radio" id="10+" value="10+" v-model="fromValue.yearsOfExperience"/>
   <label for="6-10">10+</label>
 
-  <div>
+  <div for="age">Age</div>
+  <input @keyup.enter="submitForm" type="number" id="age" v-model.number="fromValue.age">
+
+  <!-- <div>
     <button>Submit</button>
-  </div>
+  </div> -->
 
 </div>
 
@@ -102,13 +105,13 @@ export default {
         transportation: 'no',
         skillSet: [],
         yearsOfExperience: '',
+        age: null,
 
       }
       }
     },
     methods: {
       submitForm(event) {
-        event.preventDefault()
         console.log('Form Values', this.fromValue)
       }
     },
