@@ -1,16 +1,21 @@
 
 <template>
-<Greet name="Dadey" hero-name="Umaga"/>
+<!-- <Greet name="Dadey" hero-name="Umaga"/>
 <Greet name="Murra" hero-name="Rusev"/>
-<Greet :name="name" :hero-name="address"/>
+<Greet :name="name" :hero-name="address"/> -->
+
+<Article title="Article Title" :likes="50" :isPublished="true"/>
 </template>
 
 <script>
 import Greet from './components/Greet.vue'
+import Article from './components/Article.vue'
+
 export default {
   name: 'App',
   components: {
     Greet,
+    Article,
   },
   data() {
     return {
